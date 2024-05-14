@@ -9,7 +9,7 @@ const server = http.createServer(app);
 //const io = SocketIO(server);
 const io = require("socket.io")(server, {
     cors: {
-      origin: "http://localhost:8080",
+      origin: process.env.FRONT_URI,
       methods: ["GET", "POST"],
       allowedHeaders: ["extra-custom-headers"],
       credentials: true
